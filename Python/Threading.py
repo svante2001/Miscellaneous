@@ -1,5 +1,5 @@
 import threading
-import time
+
 
 def square(numbers):
     for n in numbers:
@@ -7,7 +7,6 @@ def square(numbers):
 
 def cube(numbers):
     for n in numbers:
-        time.sleep(0.5)
         print('Cube of %d is %d' % (n, n*n*n))
 
 arr = [2,4,6,8,10]
