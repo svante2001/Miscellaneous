@@ -1,0 +1,11 @@
+/Users/svantegeisshirt/Projects/Hangman/Hangman/bin/Debug/Hangman.exe
+/Users/svantegeisshirt/Projects/Hangman/Hangman/bin/Debug/Hangman.pdb
+/Users/svantegeisshirt/Projects/Hangman/Hangman/obj/x86/Debug/Hangman.csprojAssemblyReference.cache
+/Users/svantegeisshirt/Projects/Hangman/Hangman/obj/x86/Debug/Hangman.csproj.CoreCompileInputs.cache
+/Users/svantegeisshirt/Projects/Hangman/Hangman/obj/x86/Debug/Hangman.exe
+/Users/svantegeisshirt/Projects/Hangman/Hangman/obj/x86/Debug/Hangman.pdb
+/Users/svantegeisshirt/Projects/HangmanC#/Hangman/Hangman/bin/Debug/Hangman.exe
+/Users/svantegeisshirt/Projects/HangmanC#/Hangman/Hangman/bin/Debug/Hangman.pdb
+/Users/svantegeisshirt/Projects/HangmanC#/Hangman/Hangman/obj/x86/Debug/Hangman.csprojAssemblyReference.cache
+/Users/svantegeisshirt/Projects/HangmanC#/Hangman/Hangman/obj/x86/Debug/Hangman.exe
+/Users/svantegeisshirt/Projects/HangmanC#/Hangman/Hangman/obj/x86/Debug/Hangman.pdb
