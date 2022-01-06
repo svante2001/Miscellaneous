@@ -103,7 +103,6 @@ void delete(struct list *list, int key) {
         list->head = list->head->next;
     } else {
         struct element *p = searchForDelete(list, key);
-        //p->next = NULL;
         p->next = p->next->next;
     }
 }
