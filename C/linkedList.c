@@ -84,16 +84,29 @@ void insert(struct list *list, int index, int value) {
     }
 }
 
-// TODO:
-void delete(struct list *list, int index) {
-    // out of bounds for list
-    int l = length(list);
-    if (index < 0 || l < index-1) {
-        printf("Delete: Out of bunds for list\n");
-        return;
+struct element* searchForDelete(struct list *list, int key) {
+    struct element *x = list->head;
+    struct element *prev = x;
+    while (x != NULL && (x->value) != key) {
+        prev = x;
+        x = x->next;
     }
+    return prev;
 }
 
+void delete(struct list *list, int key) {
+    if (list->head == NULL) {
+        return;
+    }
+    // Delete head
+    if (list->head->value == key) {
+        list->head = list->head->next;
+    } else {
+        struct element *p = searchForDelete(list, key);
+        //p->next = NULL;
+        p->next = p->next->next;
+    }
+}
 
 int main() {
     struct list *list;
@@ -109,9 +122,13 @@ int main() {
     insert(list, 2, 10);
     insert(list, 4, 20);
 
-    // remove
-    delete(list, 9);
-
     printList(list);
-    printf("Length of list: %d", length(list));
+    printf("Length of list: %d\n", length(list));
+
+
+    // delete from the list
+    printf("\nDeleting elements\n");
+    delete(list, 10);
+    printList(list);
+    printf("Length of list: %d\n", length(list));
 }
