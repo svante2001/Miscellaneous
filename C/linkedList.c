@@ -16,9 +16,10 @@ void printList(struct list *list) {
     struct element *ci;
     ci = list->head;
     while(ci != NULL) {
-        printf("%d\n", ci->value);
+        printf("%d ", ci->value);
         ci = ci->next;
     }
+    printf("\n");
 }
 
 void push(struct list *list, int value) {
@@ -127,7 +128,7 @@ int main() {
 
     // delete from the list
     printf("\nDeleting elements\n");
-    delete(list, 10);
+    delete(list, 5);
     printList(list);
     printf("Length of list: %d\n", length(list));
 }
