@@ -35,6 +35,12 @@ void enqueue (struct queue *q, int v) {
     }
 }
 
+int dequeue (struct queue *q) {
+    int r = q->first->value;
+    q->first = q->first->next;
+    return r;
+}
+
 void printQueue (struct queue *q) {
     struct element *i;
     i = q->first;
@@ -54,6 +60,10 @@ int main() {
     enqueue(queue, 2);
     enqueue(queue, 4);
     enqueue(queue, 16);
+
+    printQueue(queue);
+
+    printf("\nDequeue: %i\n", dequeue(queue));
 
     printQueue(queue);
 }
