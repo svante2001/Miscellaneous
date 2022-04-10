@@ -1,0 +1,15 @@
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/bin/Debug/net6.0/MergeSort
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/bin/Debug/net6.0/MergeSort.deps.json
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/bin/Debug/net6.0/MergeSort.runtimeconfig.json
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/bin/Debug/net6.0/MergeSort.dll
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/bin/Debug/net6.0/MergeSort.pdb
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/MergeSort.csproj.AssemblyReference.cache
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/MergeSort.GeneratedMSBuildEditorConfig.editorconfig
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/MergeSort.AssemblyInfoInputs.cache
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/MergeSort.AssemblyInfo.cs
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/MergeSort.csproj.CoreCompileInputs.cache
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/MergeSort.dll
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/refint/MergeSort.dll
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/MergeSort.pdb
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/MergeSort.genruntimeconfig.cache
+/home/svante/Documents/Projects/Miscellaneous/C#/MergeSort/obj/Debug/net6.0/ref/MergeSort.dll
