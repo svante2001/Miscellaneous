@@ -6,5 +6,5 @@ isPrime n = do
     0
 
 main = do
-  print (map isPrime [1,2..100])
+  print (filter (0 /=) (map isPrime [1,2..100]))
   
