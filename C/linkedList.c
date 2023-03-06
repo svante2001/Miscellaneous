@@ -100,11 +100,15 @@ void delete(struct list *list, int key) {
         return;
     }
     // Delete head
+    struct element *temp;
     if (list->head->value == key) {
-        list->head = list->head->next;
+      temp = list->head;
+      list->head = list->head->next;
     } else {
-        struct element *p = searchForDelete(list, key);
-        p->next = p->next->next;
+      struct element *p = searchForDelete(list, key);
+      temp = p->next;
+      p->next = p->next->next;
+      free(temp);
     }
 }
 
