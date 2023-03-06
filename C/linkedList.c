@@ -104,12 +104,23 @@ void delete(struct list *list, int key) {
     if (list->head->value == key) {
       temp = list->head;
       list->head = list->head->next;
-    } else {
+    }
+    else {
       struct element *p = searchForDelete(list, key);
       temp = p->next;
       p->next = p->next->next;
-      free(temp);
     }
+    free(temp);
+}
+
+void freeList(struct list *list) {
+  struct element *temp;
+  while (list->head != NULL) {
+    temp = list->head;
+    list->head = list->head->next;
+    free(temp);
+  }
+  free(list);
 }
 
 int main() {
@@ -129,10 +140,12 @@ int main() {
     printList(list);
     printf("Length of list: %d\n", length(list));
 
-
     // delete from the list
     printf("\nDeleting elements\n");
     delete(list, 5);
     printList(list);
     printf("Length of list: %d\n", length(list));
+
+    // freeing the list.
+    freeList(list);
 }
