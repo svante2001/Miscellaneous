@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define spacing 10
+#define spacing 5
 
 struct node {
   int value;
@@ -13,6 +13,14 @@ struct node {
 struct tree {
   struct node *root;
 };
+
+// This is bad since no dealloc..
+struct tree* subTree(struct node *node) {
+  struct tree *t;
+  t = (struct tree*)malloc(sizeof(struct tree));
+  t->root = node;
+  return t;
+}
 
 void printTreeRec(struct node *root, int space) {  
   if (root == NULL) {
@@ -69,36 +77,76 @@ void insert(struct tree *tree, int value) {
   }	 
 }
 
-int treeMinimum(struct tree *tree) {
+struct node* treeMinimum(struct tree *tree) {
   struct node *n = tree->root;
   while (n->left != NULL) {
     n = n->left;
   }
-  return n->value;
+  return n;
 }
 
-int treeMaximum(struct tree *tree) {
+struct node* treeMaximum(struct tree *tree) {
   struct node *n = tree->root;
   while (n->right != NULL) {
     n = n->right;
   }
-  return n->value;
+  return n;
 }
 
-int main() {
+struct node* treeSearchRec(struct node *node, int key) {
+  if (node == NULL || key == node->value) {
+    return node;
+  }
+  if (key < node->value) {
+    return treeSearchRec(node->left, key);
+  }
+  else {
+    return treeSearchRec(node->right, key);
+  }
+}
+
+struct node* successor(struct node *node) {
+  if (node->right != NULL) {
+    return treeMinimum(subTree(node));
+  }
+  struct node* y;
+  y = node->parent;
+  while(y != NULL && node == y->right) {
+    node = y;
+    y = y->right;
+  }
+  return y;
+} 
+
+struct node* predecessor(struct node *node) {
+  if (node->left != NULL) {
+    return treeMaximum(subTree(node));
+  }
+  struct node* y;
+  y = node->right;
+  while(y != NULL && node == y->left) {
+    node = y;
+    y = y->left;
+  }
+  return y;
+}
+
+int main () {
   struct tree *tree;
   tree = (struct tree*)malloc(sizeof(struct tree));
-  tree->root = NULL;
+  tree->root = NULL;  
 
   insert(tree, 10);
-  insert(tree, 5);
   insert(tree, 15);
+  insert(tree, 5);
   insert(tree, 2);
   insert(tree, 7);
-  insert(tree, 25);
   
   printTree(tree);
 
-  printf("\nMinimum: %d\n", treeMinimum(tree));
-  printf("Maximum: %d\n", treeMaximum(tree));
+  printf("\nMinimum: %d\n", treeMinimum(tree)->value);
+  printf("Maximum: %d\n", treeMaximum(tree)->value);
+  printf("%d's successor: %d\n",   (tree->root->left->value), successor(tree->root->left)->value);
+  printf("%d's predecessor: %d\n", (tree->root->left->value), predecessor(tree->root->left)->value);
+
 }
