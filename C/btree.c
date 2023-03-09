@@ -107,26 +107,26 @@ struct node* treeSearchRec(struct node *node, int key) {
 
 struct node* successor(struct node *node) {
   if (node->right != NULL) {
-    return treeMinimum(subTree(node));
+    return treeMinimum(subTree(node->right));
   }
   struct node* y;
   y = node->parent;
   while(y != NULL && node == y->right) {
     node = y;
-    y = y->right;
+    y = y->parent;
   }
   return y;
 } 
 
 struct node* predecessor(struct node *node) {
   if (node->left != NULL) {
-    return treeMaximum(subTree(node));
+    return treeMaximum(subTree(node->left));
   }
   struct node* y;
-  y = node->right;
+  y = node->parent;
   while(y != NULL && node == y->left) {
     node = y;
-    y = y->left;
+    y = y->parent;
   }
   return y;
 }
@@ -148,5 +148,5 @@ int main () {
   printf("Maximum: %d\n", treeMaximum(tree)->value);
   printf("%d's successor: %d\n",   (tree->root->left->value), successor(tree->root->left)->value);
   printf("%d's predecessor: %d\n", (tree->root->left->value), predecessor(tree->root->left)->value);
-
 }
+
